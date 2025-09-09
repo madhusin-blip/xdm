@@ -14,12 +14,12 @@
     "conversiondetails": {
       "properties": {
         "xdm:trackingCode": {
-          "title": "Tracking Code",
+          "title": "Conversion Tracking Code",
           "type": "string",
           "description": "Campaign and Ad details of a conversion."
         },
         "xdm:trackingIdentities": {
-          "title": "Tracking Identity Details",
+          "title": "Conversion tracking identity details",
           "type": "string",
           "description": "Tracking identity details for a conversion."
         },
