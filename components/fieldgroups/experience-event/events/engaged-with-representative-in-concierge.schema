@@ -1,25 +1,25 @@
 {
   "meta:license": [
-    "Copyright 2025 Adobe Systems Incorporated. All rights reserved.",
+    "Copyright 2020 Adobe Systems Incorporated. All rights reserved.",
     "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
     "you may not use this file except in compliance with the License. You may obtain a copy",
     "of the License at https://creativecommons.org/licenses/by/4.0/"
   ],
-  "$id": "https://ns.adobe.com/xdm/mixins/events/engagement-business-representative-concierge",
+  "$id": "https://ns.adobe.com/xdm/mixins/events/scheduled-meeting",
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "Engaged with a business representative in Concierge",
+  "title": "Scheduled meeting in concierge",
   "type": "object",
   "meta:tags": {
     "b2bSchema": true
   },
   "meta:conditionalField": "xdm:eventType",
-  "meta:conditionalValue": "engagement.business.representative.concierge",
+  "meta:conditionalValue": "engagement.meeting.concierge",
   "meta:intendedToExtend": [
     "https://ns.adobe.com/xdm/context/experienceevent"
   ],
-  "description": "Engaged with a business representative through Concierge in the Conversation.",
+  "description": "Booked a meeting with business representative in the Conversation.",
   "definitions": {
-    "engagewithbusinessrepresentativeinconcierge": {
+    "scheduledmeetinginconcierge": {
       "properties": {
         "xdm:engagement": {
           "title": "Engagement",
@@ -50,32 +50,19 @@
                     }
                   }
                 },
-                "xdm:conciergeConversationDetails": {
-                  "title": "Concierge Session Details",
+                "xdm:meetingDetails": {
+                  "title": "Meeting Details",
                   "type": "object",
                   "properties": {
                     "xdm:status": {
                       "title": "Status",
                       "type": "string",
-                      "description": "The status of the Concierge session"
+                      "description": "The status of the Meeting"
                     },
-                    "xdm:summary": {
-                      "title": "Summary",
+                    "xdm:scheduledFor": {
+                      "title": "Scheduled for",
                       "type": "string",
-                      "description": "A brief summary of the Concierge."
-                    },
-                    "xdm:transcript": {
-                      "title": "Transcript",
-                      "type": "string",
-                      "description": "Transcript of the chat Concierge."
-                    },
-                    "xdm:discussedTopics": {
-                      "title": "Discussed Topics",
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      },
-                      "description": "Topics discussed during the Concierge session."
+                      "description": "Time at which meeting is scheduled for."
                     }
                   }
                 },
@@ -114,7 +101,7 @@
   },
   "allOf": [
     {
-      "$ref": "#/definitions/engagewithbusinessrepresentativeinconcierge"
+      "$ref": "#/definitions/scheduledmeetinginconcierge"
     }
   ],
   "meta:status": "experimental",
